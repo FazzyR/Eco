@@ -1,0 +1,28 @@
+﻿@model List<ChartItem>
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+
+            <!-- Add more columns as needed -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+
+                <td>@product.Product.Name</td>
+
+                <td>@product.Quantity</td>
+
+                <!-- Add more columns as needed -->
+            </tr>
+        }
+    </tbody>
+</table>

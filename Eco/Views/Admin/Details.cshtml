@@ -1,0 +1,30 @@
+﻿@model Eco.Models.Product
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<div class="container mt-4">
+    <h2>@Model.Name</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Display the product image. Ensure the image URL is correct. -->
+            <img src="@Model.ImageURL" class="img-fluid" alt="Product Image">
+        </div>
+        <div class="col-md-6">
+            <!-- Display the product name -->
+            <h3>@Model.Name</h3>
+
+            <!-- Display the product description -->
+            <p>@Model.Description</p>
+
+            <!-- Display the product price -->
+            <p>Price: @Model.Price.ToString("C")</p>
+
+            <!-- Add to Cart or Buy Now button (Optional) -->
+            <a asp-controller="User" asp-action="Add" asp-route-Id="@Model.Id"class="btn btn-sm btn-outline-secondary">Add To Chart</a>
+            
+        </div>
+    </div>
+</div>

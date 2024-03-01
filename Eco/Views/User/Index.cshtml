@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Eco.Models.Product>
+
+<h2>Product Catalog</h2>
+
+
+
+
+
+<div class="row">
+
+
+    <h1><a asp-controller="User" asp-action="NewChart" class="btn btn-sm btn-outline-secondary">New Chart</a></h1>
+
+    @foreach (var product in Model)
+    {
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img src="@Url.Content(product.ImageURL)" class="card-img-top" alt="Product Image">
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <p class="card-text">@product.Description</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a asp-controller="User" asp-action="Details" asp-route-Id="@product.Id" class="btn btn-sm btn-outline-secondary">View Details</a>
+
+                        </div>
+                        <small class="text-muted">@product.Price.ToString("C")</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+
+
+</div>
